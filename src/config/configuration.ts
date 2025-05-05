@@ -1,5 +1,5 @@
 export default () => ({
-    port: parseInt(process.env.PORT || '3000'),
+    port: parseInt(process.env.PORT || '5000'),
     database: {
       uri: process.env.MONGO_URI,
     },
@@ -8,12 +8,10 @@ export default () => ({
       expiresIn: '1d',
     },
     redis: {
-      host: process.env.REDIS_HOST,
-      port: parseInt(process.env.REDIS_PORT || '6379'),
+      redisURL: process.env.REDIS_URL
     },
     mail: {
-      host: process.env.MAIL_HOST,
-      port: parseInt(process.env.MAIL_PORT),
+      mailProvider: process.env.MAIL_PROVIDER,
       user: process.env.MAIL_USER,
       pass: process.env.MAIL_PASS,
     },
